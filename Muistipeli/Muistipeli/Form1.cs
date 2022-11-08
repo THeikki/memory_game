@@ -13,13 +13,9 @@ namespace Muistipeli
 {
     public partial class Form1 : Form
     {
-        List<Button> level1Buttons = new List<Button>();
-        List<Button> level2Buttons = new List<Button>();
-        List<Button> level3Buttons = new List<Button>();
+        List<Button> levelButtons = new List<Button>();
         List<Button> lockedButtons = new List<Button>();
-        List<int> level1Numbers = new List<int>(6);
-        List<int> level2Numbers = new List<int>(20);
-        List<int> level3Numbers = new List<int>(42);
+        List<int> levelNumbers = new List<int>();
 
         bool isFirstPress = true;
         int movesTaken = 0;
@@ -70,80 +66,80 @@ namespace Muistipeli
         /**********************************************************************************/
         public void SetupLevel1Buttons()
         {
-            level1Buttons.Add(button1);
-            level1Buttons.Add(button2);
-            level1Buttons.Add(button3);
-            level1Buttons.Add(button4);
-            level1Buttons.Add(button5);
-            level1Buttons.Add(button6);
+            levelButtons.Add(button1);
+            levelButtons.Add(button2);
+            levelButtons.Add(button3);
+            levelButtons.Add(button4);
+            levelButtons.Add(button5);
+            levelButtons.Add(button6);
         }
         public void SetupLevel2Buttons()
         {
-            level2Buttons.Add(button7);
-            level2Buttons.Add(button8);
-            level2Buttons.Add(button9);
-            level2Buttons.Add(button10);
-            level2Buttons.Add(button11);
-            level2Buttons.Add(button12);
-            level2Buttons.Add(button13);
-            level2Buttons.Add(button14);
-            level2Buttons.Add(button15);
-            level2Buttons.Add(button16);
-            level2Buttons.Add(button17);
-            level2Buttons.Add(button18);
-            level2Buttons.Add(button19);
-            level2Buttons.Add(button20);
-            level2Buttons.Add(button21);
-            level2Buttons.Add(button22);
-            level2Buttons.Add(button23);
-            level2Buttons.Add(button24);
-            level2Buttons.Add(button25);
-            level2Buttons.Add(button26);
+            levelButtons.Add(button7);
+            levelButtons.Add(button8);
+            levelButtons.Add(button9);
+            levelButtons.Add(button10);
+            levelButtons.Add(button11);
+            levelButtons.Add(button12);
+            levelButtons.Add(button13);
+            levelButtons.Add(button14);
+            levelButtons.Add(button15);
+            levelButtons.Add(button16);
+            levelButtons.Add(button17);
+            levelButtons.Add(button18);
+            levelButtons.Add(button19);
+            levelButtons.Add(button20);
+            levelButtons.Add(button21);
+            levelButtons.Add(button22);
+            levelButtons.Add(button23);
+            levelButtons.Add(button24);
+            levelButtons.Add(button25);
+            levelButtons.Add(button26);
         }
         public void SetupLevel3Buttons()
         {
-            level3Buttons.Add(button27);
-            level3Buttons.Add(button28);
-            level3Buttons.Add(button29);
-            level3Buttons.Add(button30);
-            level3Buttons.Add(button31);
-            level3Buttons.Add(button32);
-            level3Buttons.Add(button33);
-            level3Buttons.Add(button34);
-            level3Buttons.Add(button35);
-            level3Buttons.Add(button36);
-            level3Buttons.Add(button37);
-            level3Buttons.Add(button38);
-            level3Buttons.Add(button39);
-            level3Buttons.Add(button40);
-            level3Buttons.Add(button41);
-            level3Buttons.Add(button42);
-            level3Buttons.Add(button43);
-            level3Buttons.Add(button44);
-            level3Buttons.Add(button45);
-            level3Buttons.Add(button46);
-            level3Buttons.Add(button47);
-            level3Buttons.Add(button48);
-            level3Buttons.Add(button49);
-            level3Buttons.Add(button50);
-            level3Buttons.Add(button51);
-            level3Buttons.Add(button52);
-            level3Buttons.Add(button53);
-            level3Buttons.Add(button54);
-            level3Buttons.Add(button55);
-            level3Buttons.Add(button56);
-            level3Buttons.Add(button57);
-            level3Buttons.Add(button58);
-            level3Buttons.Add(button59);
-            level3Buttons.Add(button60);
-            level3Buttons.Add(button61);
-            level3Buttons.Add(button62);
-            level3Buttons.Add(button63);
-            level3Buttons.Add(button64);
-            level3Buttons.Add(button65);
-            level3Buttons.Add(button66);
-            level3Buttons.Add(button67);
-            level3Buttons.Add(button68);
+            levelButtons.Add(button27);
+            levelButtons.Add(button28);
+            levelButtons.Add(button29);
+            levelButtons.Add(button30);
+            levelButtons.Add(button31);
+            levelButtons.Add(button32);
+            levelButtons.Add(button33);
+            levelButtons.Add(button34);
+            levelButtons.Add(button35);
+            levelButtons.Add(button36);
+            levelButtons.Add(button37);
+            levelButtons.Add(button38);
+            levelButtons.Add(button39);
+            levelButtons.Add(button40);
+            levelButtons.Add(button41);
+            levelButtons.Add(button42);
+            levelButtons.Add(button43);
+            levelButtons.Add(button44);
+            levelButtons.Add(button45);
+            levelButtons.Add(button46);
+            levelButtons.Add(button47);
+            levelButtons.Add(button48);
+            levelButtons.Add(button49);
+            levelButtons.Add(button50);
+            levelButtons.Add(button51);
+            levelButtons.Add(button52);
+            levelButtons.Add(button53);
+            levelButtons.Add(button54);
+            levelButtons.Add(button55);
+            levelButtons.Add(button56);
+            levelButtons.Add(button57);
+            levelButtons.Add(button58);
+            levelButtons.Add(button59);
+            levelButtons.Add(button60);
+            levelButtons.Add(button61);
+            levelButtons.Add(button62);
+            levelButtons.Add(button63);
+            levelButtons.Add(button64);
+            levelButtons.Add(button65);
+            levelButtons.Add(button66);
+            levelButtons.Add(button67);
+            levelButtons.Add(button68);
         }
         /**********************************************************************************/
         /*  Give prompts to user    */
@@ -170,17 +166,17 @@ namespace Muistipeli
                 number = rnd.Next(1, 4);
                 if (number == 1 && num1 != 2)
                 {
-                    level1Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num1++;
                 }
                 else if (number == 2 && num2 != 2)
                 {
-                    level1Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num2++;
                 }
                 else if (number == 3 && num3 != 2)
                 {
-                    level1Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num3++;
                 }
                 else
@@ -201,52 +197,52 @@ namespace Muistipeli
                 number = rnd.Next(1, 11);
                 if (number == 1 && num1 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num1++;
                 }
                 else if (number == 2 && num2 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num2++;
                 }
                 else if (number == 3 && num3 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num3++;
                 }
                 else if (number == 4 && num4 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num4++;
                 }
                 else if (number ==5 && num5 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num5++;
                 }
                 else if (number == 6 && num6 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num6++;
                 }
                 else if (number == 7 && num7 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num7++;
                 }
                 else if (number == 8 && num8 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num8++;
                 }
                 else if (number == 9 && num9 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num9++;
                 }
                 else if (number == 10 && num10 != 2)
                 {
-                    level2Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num10++;
                 }
                 else
@@ -268,107 +264,107 @@ namespace Muistipeli
                 number = rnd.Next(1, 22);
                 if (number == 1 && num1 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num1++;
                 }
                 else if (number == 2 && num2 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num2++;
                 }
                 else if (number == 3 && num3 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num3++;
                 }
                 else if (number == 4 && num4 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num4++;
                 }
                 else if (number == 5 && num5 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num5++;
                 }
                 else if (number == 6 && num6 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num6++;
                 }
                 else if (number == 7 && num7 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num7++;
                 }
                 else if (number == 8 && num8 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num8++;
                 }
                 else if (number == 9 && num9 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num9++;
                 }
                 else if (number == 10 && num10 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num10++;
                 }
                 else if (number == 11 && num11 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num11++;
                 }
                 else if (number == 12 && num12 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num12++;
                 }
                 else if (number == 13 && num13 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num13++;
                 }
                 else if (number == 14 && num14 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num14++;
                 }
                 else if (number == 15 && num15 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num15++;
                 }
                 else if (number == 16 && num16 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num16++;
                 }
                 else if (number == 17 && num17 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num17++;
                 }
                 else if (number == 18 && num18 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num18++;
                 }
                 else if (number == 19 && num19 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num19++;
                 }
                 else if (number == 20 && num20 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num20++;
                 }
                 else if (number == 21 && num21 != 2)
                 {
-                    level3Numbers.Add(number);
+                    levelNumbers.Add(number);
                     num21++;
                 }
                 else
@@ -436,22 +432,22 @@ namespace Muistipeli
                     switch (button.Name)
                     {
                         case "button1":
-                            button1.Text = level1Numbers[0].ToString();
+                            button1.Text = levelNumbers[0].ToString();
                             break;
                         case "button2":
-                            button2.Text = level1Numbers[1].ToString();
+                            button2.Text = levelNumbers[1].ToString();
                             break;
                         case "button3":
-                            button3.Text = level1Numbers[2].ToString();
+                            button3.Text = levelNumbers[2].ToString();
                             break;
                         case "button4":
-                            button4.Text = level1Numbers[3].ToString();
+                            button4.Text = levelNumbers[3].ToString();
                             break;
                         case "button5":
-                            button5.Text = level1Numbers[4].ToString();
+                            button5.Text = levelNumbers[4].ToString();
                             break;
                         case "button6":
-                            button6.Text = level1Numbers[5].ToString();
+                            button6.Text = levelNumbers[5].ToString();
                             break;
                     }
                 }
@@ -460,64 +456,64 @@ namespace Muistipeli
                     switch (button.Name)
                     {
                         case "button7":
-                            button7.Text = level2Numbers[0].ToString();
+                            button7.Text = levelNumbers[0].ToString();
                             break;
                         case "button8":
-                            button8.Text = level2Numbers[1].ToString();
+                            button8.Text = levelNumbers[1].ToString();
                             break;
                         case "button9":
-                            button9.Text = level2Numbers[2].ToString();
+                            button9.Text = levelNumbers[2].ToString();
                             break;
                         case "button10":
-                            button10.Text = level2Numbers[3].ToString();
+                            button10.Text = levelNumbers[3].ToString();
                             break;
                         case "button11":
-                            button11.Text = level2Numbers[4].ToString();
+                            button11.Text = levelNumbers[4].ToString();
                             break;
                         case "button12":
-                            button12.Text = level2Numbers[5].ToString();
+                            button12.Text = levelNumbers[5].ToString();
                             break;
                         case "button13":
-                            button13.Text = level2Numbers[6].ToString();
+                            button13.Text = levelNumbers[6].ToString();
                             break;
                         case "button14":
-                            button14.Text = level2Numbers[7].ToString();
+                            button14.Text = levelNumbers[7].ToString();
                             break;
                         case "button15":
-                            button15.Text = level2Numbers[8].ToString();
+                            button15.Text = levelNumbers[8].ToString();
                             break;
                         case "button16":
-                            button16.Text = level2Numbers[9].ToString();
+                            button16.Text = levelNumbers[9].ToString();
                             break;
                         case "button17":
-                            button17.Text = level2Numbers[10].ToString();
+                            button17.Text = levelNumbers[10].ToString();
                             break;
                         case "button18":
-                            button18.Text = level2Numbers[11].ToString();
+                            button18.Text = levelNumbers[11].ToString();
                             break;
                         case "button19":
-                            button19.Text = level2Numbers[12].ToString();
+                            button19.Text = levelNumbers[12].ToString();
                             break;
                         case "button20":
-                            button20.Text = level2Numbers[13].ToString();
+                            button20.Text = levelNumbers[13].ToString();
                             break;
                         case "button21":
-                            button21.Text = level2Numbers[14].ToString();
+                            button21.Text = levelNumbers[14].ToString();
                             break;
                         case "button22":
-                            button22.Text = level2Numbers[15].ToString();
+                            button22.Text = levelNumbers[15].ToString();
                             break;
                         case "button23":
-                            button23.Text = level2Numbers[16].ToString();
+                            button23.Text = levelNumbers[16].ToString();
                             break;
                         case "button24":
-                            button24.Text = level2Numbers[17].ToString();
+                            button24.Text = levelNumbers[17].ToString();
                             break;
                         case "button25":
-                            button25.Text = level2Numbers[18].ToString();
+                            button25.Text = levelNumbers[18].ToString();
                             break;
                         case "button26":
-                            button26.Text = level2Numbers[19].ToString();
+                            button26.Text = levelNumbers[19].ToString();
                             break;
                     }
                 }
@@ -526,130 +522,130 @@ namespace Muistipeli
                     switch (button.Name)
                     {
                         case "button27":
-                            button27.Text = level3Numbers[0].ToString();
+                            button27.Text = levelNumbers[0].ToString();
                             break;
                         case "button28":
-                            button28.Text = level3Numbers[1].ToString();
+                            button28.Text = levelNumbers[1].ToString();
                             break;
                         case "button29":
-                            button29.Text = level3Numbers[2].ToString();
+                            button29.Text = levelNumbers[2].ToString();
                             break;
                         case "button30":
-                            button30.Text = level3Numbers[3].ToString();
+                            button30.Text = levelNumbers[3].ToString();
                             break;
                         case "button31":
-                            button31.Text = level3Numbers[4].ToString();
+                            button31.Text = levelNumbers[4].ToString();
                             break;
                         case "button32":
-                            button32.Text = level3Numbers[5].ToString();
+                            button32.Text = levelNumbers[5].ToString();
                             break;
                         case "button33":
-                            button33.Text = level3Numbers[6].ToString();
+                            button33.Text = levelNumbers[6].ToString();
                             break;
                         case "button34":
-                            button34.Text = level3Numbers[7].ToString();
+                            button34.Text = levelNumbers[7].ToString();
                             break;
                         case "button35":
-                            button35.Text = level3Numbers[8].ToString();
+                            button35.Text = levelNumbers[8].ToString();
                             break;
                         case "button36":
-                            button36.Text = level3Numbers[9].ToString();
+                            button36.Text = levelNumbers[9].ToString();
                             break;
                         case "button37":
-                            button37.Text = level3Numbers[10].ToString();
+                            button37.Text = levelNumbers[10].ToString();
                             break;
                         case "button38":
-                            button38.Text = level3Numbers[11].ToString();
+                            button38.Text = levelNumbers[11].ToString();
                             break;
                         case "button39":
-                            button39.Text = level3Numbers[12].ToString();
+                            button39.Text = levelNumbers[12].ToString();
                             break;
                         case "button40":
-                            button40.Text = level3Numbers[13].ToString();
+                            button40.Text = levelNumbers[13].ToString();
                             break;
                         case "button41":
-                            button41.Text = level3Numbers[14].ToString();
+                            button41.Text = levelNumbers[14].ToString();
                             break;
                         case "button42":
-                            button42.Text = level3Numbers[15].ToString();
+                            button42.Text = levelNumbers[15].ToString();
                             break;
                         case "button43":
-                            button43.Text = level3Numbers[16].ToString();
+                            button43.Text = levelNumbers[16].ToString();
                             break;
                         case "button44":
-                            button44.Text = level3Numbers[17].ToString();
+                            button44.Text = levelNumbers[17].ToString();
                             break;
                         case "button45":
-                            button45.Text = level3Numbers[18].ToString();
+                            button45.Text = levelNumbers[18].ToString();
                             break;
                         case "button46":
-                            button46.Text = level3Numbers[19].ToString();
+                            button46.Text = levelNumbers[19].ToString();
                             break;
                         case "button47":
-                            button47.Text = level3Numbers[20].ToString();
+                            button47.Text = levelNumbers[20].ToString();
                             break;
                         case "button48":
-                            button48.Text = level3Numbers[21].ToString();
+                            button48.Text = levelNumbers[21].ToString();
                             break;
                         case "button49":
-                            button49.Text = level3Numbers[22].ToString();
+                            button49.Text = levelNumbers[22].ToString();
                             break;
                         case "button50":
-                            button50.Text = level3Numbers[23].ToString();
+                            button50.Text = levelNumbers[23].ToString();
                             break;
                         case "button51":
-                            button51.Text = level3Numbers[24].ToString();
+                            button51.Text = levelNumbers[24].ToString();
                             break;
                         case "button52":
-                            button52.Text = level3Numbers[25].ToString();
+                            button52.Text = levelNumbers[25].ToString();
                             break;
                         case "button53":
-                            button53.Text = level3Numbers[26].ToString();
+                            button53.Text = levelNumbers[26].ToString();
                             break;
                         case "button54":
-                            button54.Text = level3Numbers[27].ToString();
+                            button54.Text = levelNumbers[27].ToString();
                             break;
                         case "button55":
-                            button55.Text = level3Numbers[28].ToString();
+                            button55.Text = levelNumbers[28].ToString();
                             break;
                         case "button56":
-                            button56.Text = level3Numbers[29].ToString();
+                            button56.Text = levelNumbers[29].ToString();
                             break;
                         case "button57":
-                            button57.Text = level3Numbers[30].ToString();
+                            button57.Text = levelNumbers[30].ToString();
                             break;
                         case "button58":
-                            button58.Text = level3Numbers[31].ToString();
+                            button58.Text = levelNumbers[31].ToString();
                             break;
                         case "button59":
-                            button59.Text = level3Numbers[32].ToString();
+                            button59.Text = levelNumbers[32].ToString();
                             break;
                         case "button60":
-                            button60.Text = level3Numbers[33].ToString();
+                            button60.Text = levelNumbers[33].ToString();
                             break;
                         case "button61":
-                            button61.Text = level3Numbers[34].ToString();
+                            button61.Text = levelNumbers[34].ToString();
                             break;
                         case "button62":
-                            button62.Text = level3Numbers[35].ToString();
+                            button62.Text = levelNumbers[35].ToString();
                             break;
                         case "button63":
-                            button63.Text = level3Numbers[36].ToString();
+                            button63.Text = levelNumbers[36].ToString();
                             break;
                         case "button64":
-                            button64.Text = level3Numbers[37].ToString();
+                            button64.Text = levelNumbers[37].ToString();
                             break;
                         case "button65":
-                            button65.Text = level3Numbers[38].ToString();
+                            button65.Text = levelNumbers[38].ToString();
                             break;
                         case "button66":
-                            button66.Text = level3Numbers[39].ToString();
+                            button66.Text = levelNumbers[39].ToString();
                             break;
                         case "button67":
-                            button67.Text = level3Numbers[40].ToString();
+                            button67.Text = levelNumbers[40].ToString();
                             break;
                         case "button68":
-                            button68.Text = level3Numbers[41].ToString();
+                            button68.Text = levelNumbers[41].ToString();
                             break;
                     }
                 }
@@ -672,22 +668,22 @@ namespace Muistipeli
                 switch (buttonX.Name)
                 {
                     case "button1":
-                        button1.Text = level1Numbers[0].ToString();
+                        button1.Text = levelNumbers[0].ToString();
                         break;
                     case "button2":
-                        button2.Text = level1Numbers[1].ToString();
+                        button2.Text = levelNumbers[1].ToString();
                         break;
                     case "button3":
-                        button3.Text = level1Numbers[2].ToString();
+                        button3.Text = levelNumbers[2].ToString();
                         break;
                     case "button4":
-                        button4.Text = level1Numbers[3].ToString();
+                        button4.Text = levelNumbers[3].ToString();
                         break;
                     case "button5":
-                        button5.Text = level1Numbers[4].ToString();
+                        button5.Text = levelNumbers[4].ToString();
                         break;
                     case "button6":
-                        button6.Text = level1Numbers[5].ToString();
+                        button6.Text = levelNumbers[5].ToString();
                         break;
                 }
             }
@@ -696,64 +692,64 @@ namespace Muistipeli
                 switch (buttonX.Name)
                 {
                     case "button7":
-                        button7.Text = level2Numbers[0].ToString();
+                        button7.Text = levelNumbers[0].ToString();
                         break;
                     case "button8":
-                        button8.Text = level2Numbers[1].ToString();
+                        button8.Text = levelNumbers[1].ToString();
                         break;
                     case "button9":
-                        button9.Text = level2Numbers[2].ToString();
+                        button9.Text = levelNumbers[2].ToString();
                         break;
                     case "button10":
-                        button10.Text = level2Numbers[3].ToString();
+                        button10.Text = levelNumbers[3].ToString();
                         break;
                     case "button11":
-                        button11.Text = level2Numbers[4].ToString();
+                        button11.Text = levelNumbers[4].ToString();
                         break;
                     case "button12":
-                        button12.Text = level2Numbers[5].ToString();
+                        button12.Text = levelNumbers[5].ToString();
                         break;
                     case "button13":
-                        button13.Text = level2Numbers[6].ToString();
+                        button13.Text = levelNumbers[6].ToString();
                         break;
                     case "button14":
-                        button14.Text = level2Numbers[7].ToString();
+                        button14.Text = levelNumbers[7].ToString();
                         break;
                     case "button15":
-                        button15.Text = level2Numbers[8].ToString();
+                        button15.Text = levelNumbers[8].ToString();
                         break;
                     case "button16":
-                        button16.Text = level2Numbers[9].ToString();
+                        button16.Text = levelNumbers[9].ToString();
                         break;
                     case "button17":
-                        button17.Text = level2Numbers[10].ToString();
+                        button17.Text = levelNumbers[10].ToString();
                         break;
                     case "button18":
-                        button18.Text = level2Numbers[11].ToString();
+                        button18.Text = levelNumbers[11].ToString();
                         break;
                     case "button19":
-                        button19.Text = level2Numbers[12].ToString();
+                        button19.Text = levelNumbers[12].ToString();
                         break;
                     case "button20":
-                        button20.Text = level2Numbers[13].ToString();
+                        button20.Text = levelNumbers[13].ToString();
                         break;
                     case "button21":
-                        button21.Text = level2Numbers[14].ToString();
+                        button21.Text = levelNumbers[14].ToString();
                         break;
                     case "button22":
-                        button22.Text = level2Numbers[15].ToString();
+                        button22.Text = levelNumbers[15].ToString();
                         break;
                     case "button23":
-                        button23.Text = level2Numbers[16].ToString();
+                        button23.Text = levelNumbers[16].ToString();
                         break;
                     case "button24":
-                        button24.Text = level2Numbers[17].ToString();
+                        button24.Text = levelNumbers[17].ToString();
                         break;
                     case "button25":
-                        button25.Text = level2Numbers[18].ToString();
+                        button25.Text = levelNumbers[18].ToString();
                         break;
                     case "button26":
-                        button26.Text = level2Numbers[19].ToString();
+                        button26.Text = levelNumbers[19].ToString();
                         break;
                 }
             }
@@ -762,130 +758,130 @@ namespace Muistipeli
                 switch (buttonX.Name)
                 {
                     case "button27":
-                        button27.Text = level3Numbers[0].ToString();
+                        button27.Text = levelNumbers[0].ToString();
                         break;
                     case "button28":
-                        button28.Text = level3Numbers[1].ToString();
+                        button28.Text = levelNumbers[1].ToString();
                         break;
                     case "button29":
-                        button29.Text = level3Numbers[2].ToString();
+                        button29.Text = levelNumbers[2].ToString();
                         break;
                     case "button30":
-                        button30.Text = level3Numbers[3].ToString();
+                        button30.Text = levelNumbers[3].ToString();
                         break;
                     case "button31":
-                        button31.Text = level3Numbers[4].ToString();
+                        button31.Text = levelNumbers[4].ToString();
                         break;
                     case "button32":
-                        button32.Text = level3Numbers[5].ToString();
+                        button32.Text = levelNumbers[5].ToString();
                         break;
                     case "button33":
-                        button33.Text = level3Numbers[6].ToString();
+                        button33.Text = levelNumbers[6].ToString();
                         break;
                     case "button34":
-                        button34.Text = level3Numbers[7].ToString();
+                        button34.Text = levelNumbers[7].ToString();
                         break;
                     case "button35":
-                        button35.Text = level3Numbers[8].ToString();
+                        button35.Text = levelNumbers[8].ToString();
                         break;
                     case "button36":
-                        button36.Text = level3Numbers[9].ToString();
+                        button36.Text = levelNumbers[9].ToString();
                         break;
                     case "button37":
-                        button37.Text = level3Numbers[10].ToString();
+                        button37.Text = levelNumbers[10].ToString();
                         break;
                     case "button38":
-                        button38.Text = level3Numbers[11].ToString();
+                        button38.Text = levelNumbers[11].ToString();
                         break;
                     case "button39":
-                        button39.Text = level3Numbers[12].ToString();
+                        button39.Text = levelNumbers[12].ToString();
                         break;
                     case "button40":
-                        button40.Text = level3Numbers[13].ToString();
+                        button40.Text = levelNumbers[13].ToString();
                         break;
                     case "button41":
-                        button41.Text = level3Numbers[14].ToString();
+                        button41.Text = levelNumbers[14].ToString();
                         break;
                     case "button42":
-                        button42.Text = level3Numbers[15].ToString();
+                        button42.Text = levelNumbers[15].ToString();
                         break;
                     case "button43":
-                        button43.Text = level3Numbers[16].ToString();
+                        button43.Text = levelNumbers[16].ToString();
                         break;
                     case "button44":
-                        button44.Text = level3Numbers[17].ToString();
+                        button44.Text = levelNumbers[17].ToString();
                         break;
                     case "button45":
-                        button45.Text = level3Numbers[18].ToString();
+                        button45.Text = levelNumbers[18].ToString();
                         break;
                     case "button46":
-                        button46.Text = level3Numbers[19].ToString();
+                        button46.Text = levelNumbers[19].ToString();
                         break;
                     case "button47":
-                        button47.Text = level3Numbers[20].ToString();
+                        button47.Text = levelNumbers[20].ToString();
                         break;
                     case "button48":
-                        button48.Text = level3Numbers[21].ToString();
+                        button48.Text = levelNumbers[21].ToString();
                         break;
                     case "button49":
-                        button49.Text = level3Numbers[22].ToString();
+                        button49.Text = levelNumbers[22].ToString();
                         break;
                     case "button50":
-                        button50.Text = level3Numbers[23].ToString();
+                        button50.Text = levelNumbers[23].ToString();
                         break;
                     case "button51":
-                        button51.Text = level3Numbers[24].ToString();
+                        button51.Text = levelNumbers[24].ToString();
                         break;
                     case "button52":
-                        button52.Text = level3Numbers[25].ToString();
+                        button52.Text = levelNumbers[25].ToString();
                         break;
                     case "button53":
-                        button53.Text = level3Numbers[26].ToString();
+                        button53.Text = levelNumbers[26].ToString();
                         break;
                     case "button54":
-                        button54.Text = level3Numbers[27].ToString();
+                        button54.Text = levelNumbers[27].ToString();
                         break;
                     case "button55":
-                        button55.Text = level3Numbers[28].ToString();
+                        button55.Text = levelNumbers[28].ToString();
                         break;
                     case "button56":
-                        button56.Text = level3Numbers[29].ToString();
+                        button56.Text = levelNumbers[29].ToString();
                         break;
                     case "button57":
-                        button57.Text = level3Numbers[30].ToString();
+                        button57.Text = levelNumbers[30].ToString();
                         break;
                     case "button58":
-                        button58.Text = level3Numbers[31].ToString();
+                        button58.Text = levelNumbers[31].ToString();
                         break;
                     case "button59":
-                        button59.Text = level3Numbers[32].ToString();
+                        button59.Text = levelNumbers[32].ToString();
                         break;
                     case "button60":
-                        button60.Text = level3Numbers[33].ToString();
+                        button60.Text = levelNumbers[33].ToString();
                         break;
                     case "button61":
-                        button61.Text = level3Numbers[34].ToString();
+                        button61.Text = levelNumbers[34].ToString();
                         break;
                     case "button62":
-                        button62.Text = level3Numbers[35].ToString();
+                        button62.Text = levelNumbers[35].ToString();
                         break;
                     case "button63":
-                        button63.Text = level3Numbers[36].ToString();
+                        button63.Text = levelNumbers[36].ToString();
                         break;
                     case "button64":
-                        button64.Text = level3Numbers[37].ToString();
+                        button64.Text = levelNumbers[37].ToString();
                         break;
                     case "button65":
-                        button65.Text = level3Numbers[38].ToString();
+                        button65.Text = levelNumbers[38].ToString();
                         break;
                     case "button66":
-                        button66.Text = level3Numbers[39].ToString();
+                        button66.Text = levelNumbers[39].ToString();
                         break;
                     case "button67":
-                        button67.Text = level3Numbers[40].ToString();
+                        button67.Text = levelNumbers[40].ToString();
                         break;
                     case "button68":
-                        button68.Text = level3Numbers[41].ToString();
+                        button68.Text = levelNumbers[41].ToString();
                         break;
                 }
             }
@@ -934,11 +930,11 @@ namespace Muistipeli
                 if (guess1.ToString() == guess2.ToString())
                 {
                     level1Pairs--;
-                    for (int i = 0; i < level1Buttons.Count; i++)
+                    for (int i = 0; i < levelButtons.Count; i++)
                     {
-                        if (lockedButtons.Contains(level1Buttons[i]))
+                        if (lockedButtons.Contains(levelButtons[i]))
                         {
-                            level1Buttons.RemoveAt(i);
+                            levelButtons.RemoveAt(i);
                         }
                     }
                 }
@@ -959,11 +955,11 @@ namespace Muistipeli
                 if (guess1.ToString() == guess2.ToString())
                 {
                     level2Pairs--;
-                    for (int i = 0; i < level2Buttons.Count; i++)
+                    for (int i = 0; i < levelButtons.Count; i++)
                     {
-                        if (lockedButtons.Contains(level2Buttons[i]))
+                        if (lockedButtons.Contains(levelButtons[i]))
                         {
-                            level2Buttons.RemoveAt(i);
+                            levelButtons.RemoveAt(i);
                         }
                     }
                 }
@@ -984,11 +980,11 @@ namespace Muistipeli
                 if (guess1.ToString() == guess2.ToString())
                 {
                     level3Pairs--;
-                    for (int i = 0; i < level3Buttons.Count; i++)
+                    for (int i = 0; i < levelButtons.Count; i++)
                     {
-                        if (lockedButtons.Contains(level3Buttons[i]))
+                        if (lockedButtons.Contains(levelButtons[i]))
                         {
-                            level3Buttons.RemoveAt(i);
+                            levelButtons.RemoveAt(i);
                         }
                     }
                 }
