@@ -1,0 +1,17 @@
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\bin\Debug\netcoreapp3.1\Muistipeli.exe
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\bin\Debug\netcoreapp3.1\Muistipeli.deps.json
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\bin\Debug\netcoreapp3.1\Muistipeli.runtimeconfig.json
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\bin\Debug\netcoreapp3.1\Muistipeli.runtimeconfig.dev.json
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\bin\Debug\netcoreapp3.1\Muistipeli.dll
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\bin\Debug\netcoreapp3.1\Muistipeli.pdb
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.Form1.resources
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.csproj.GenerateResource.cache
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.AssemblyInfoInputs.cache
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.AssemblyInfo.cs
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.csproj.CoreCompileInputs.cache
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.dll
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.pdb
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.genruntimeconfig.cache
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.csproj.AssemblyReference.cache
+C:\Users\Omistaja\Muistipeli\Muistipeli\Muistipeli\obj\Debug\netcoreapp3.1\Muistipeli.Properties.Resources.resources
