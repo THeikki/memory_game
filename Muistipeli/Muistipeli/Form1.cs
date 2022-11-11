@@ -18,6 +18,8 @@ namespace Muistipeli
         List<int> levelNumbers = new List<int>();
 
         bool isFirstPress = true;
+        //bool isAvailable = true;
+        //bool isShowing = false;
         int movesTaken = 0;
         int level1Pairs = 3;
         int level2Pairs = 10;
@@ -32,16 +34,17 @@ namespace Muistipeli
             panel1.Visible = false;
             panel2.Visible = false;
             panel3.Visible = false;
+            panel4.Visible = true;
+            panel5.Visible = false;
+            restartButton.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            
 
         }
         /**********************************************************************************/
-        /*  Print number of pairs lewft at start */
+        /*  Print number of pairs left at start */
         /**********************************************************************************/
         public void PrintNumberOfPairsAtStart()
         {
@@ -390,10 +393,10 @@ namespace Muistipeli
         private void easyButton_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
+            panel4.Visible = false;
+            panel5.Visible = true;
+            restartButton.Visible = true;
             PrintFirstprompt();
-            easyButton.Enabled = false;
-            averageButton.Enabled = false;
-            hardButton.Enabled = false;
             difficulty = 1;
             GetRandomNumbersForLevel1();
             PrintNumberOfPairsAtStart();
@@ -401,10 +404,10 @@ namespace Muistipeli
         private void averageButton_Click(object sender, EventArgs e)
         {
             panel2.Visible = true;
+            panel4.Visible = false;
+            panel5.Visible = true;
+            restartButton.Visible = true;
             PrintFirstprompt();
-            averageButton.Enabled = false;
-            easyButton.Enabled = false;
-            hardButton.Enabled = false;
             difficulty = 2;
             GetRandomNumbersForLevel2();
             PrintNumberOfPairsAtStart();
@@ -412,10 +415,10 @@ namespace Muistipeli
         private void hardButton_Click(object sender, EventArgs e)
         {
             panel3.Visible = true;
+            panel4.Visible = false;
+            panel5.Visible = true;
+            restartButton.Visible = true;
             PrintFirstprompt();
-            hardButton.Enabled = false;
-            averageButton.Enabled = false;
-            easyButton.Enabled = false;
             difficulty = 3;
             GetRandomNumbersForLevel3();
             PrintNumberOfPairsAtStart();
@@ -424,10 +427,9 @@ namespace Muistipeli
         {
             textBox3.Text = "";
             Button button = sender as Button;
-
             if (isFirstPress)
             {
-                if(difficulty == 1)
+                if (difficulty == 1)
                 {
                     switch (button.Name)
                     {
@@ -451,7 +453,7 @@ namespace Muistipeli
                             break;
                     }
                 }
-                else if(difficulty == 2)
+                else if (difficulty == 2)
                 {
                     switch (button.Name)
                     {
@@ -663,7 +665,7 @@ namespace Muistipeli
         private void ButtonClick2(object sender, EventArgs e)
         {
             Button buttonX = sender as Button;
-            if(difficulty == 1)
+            if (difficulty == 1)
             {
                 switch (buttonX.Name)
                 {
@@ -687,7 +689,7 @@ namespace Muistipeli
                         break;
                 }
             }
-            else if(difficulty == 2)
+            else if (difficulty == 2)
             {
                 switch (buttonX.Name)
                 {
@@ -885,25 +887,46 @@ namespace Muistipeli
                         break;
                 }
             }
+            //DisableButtons();
             guess2 = buttonX.Text;
             lockedButtons.Add(buttonX);
             lockedButtons[1].Enabled = false;
             isFirstPress = true;
             CheckIfBlocksMatches(guess1, guess2);
-            CheckIfPlayerHasWon();
-            PrintFirstprompt();
         }
         /**********************************************************************************/
         /*  Game events handling    */
         /**********************************************************************************/
-        private void CheckIfPlayerHasWon()
+        private async void DisableButtons()
         {
             if(difficulty == 1)
+            {
+                panel1.Enabled = false;
+                await Task.Delay(2100);
+                panel1.Enabled = true;
+            }
+            else if (difficulty == 2)
+            {
+                panel2.Enabled = false;
+                await Task.Delay(2500);
+                panel2.Enabled = true;
+            }
+            else if (difficulty == 3)
+            {
+                panel3.Enabled = false;
+                await Task.Delay(2500);
+                panel3.Enabled = true;
+            }
+        }
+        
+        private void CheckIfPlayerHasWon()
+        {
+            if (difficulty == 1)
             {
                 if (level1Pairs == 0)
                 {
                     textBox3.Visible = true;
-                    textBox3.Text = "Vaikeustaso 1 suoritettu!" + "\r\n" + "Pelaaja käänsi " + movesTaken + " paria";
+                    textBox3.Text = "VAIKEUSTASO 1 SUORITETTU!" + "\r\n\r\n\n" + "Pelaaja käänsi " + movesTaken + " paria";
                 }
             }
             else if (difficulty == 2)
@@ -911,7 +934,7 @@ namespace Muistipeli
                 if (level2Pairs == 0)
                 {
                     textBox3.Visible = true;
-                    textBox3.Text = "Vaikeustaso 2 suoritettu!" + "\r\n" + "Pelaaja käänsi " + movesTaken + " paria";
+                    textBox3.Text = "VAIKEUSTASO 2 SUORITETTU!" + "\r\n\r\n" + "Pelaaja käänsi " + movesTaken + " paria";
                 }
             }
             else if (difficulty == 3)
@@ -919,13 +942,15 @@ namespace Muistipeli
                 if (level3Pairs == 0)
                 {
                     textBox3.Visible = true;
-                    textBox3.Text = "Vaikeustaso 3 suoritettu!" + "\r\n" + "Pelaaja käänsi " + movesTaken + " paria";
+                    textBox3.Text = "VAIKEUSTASO 3 SUORITETTU!" + "\r\n\r\n" + "Pelaaja käänsi " + movesTaken + " paria";
                 }
             }
+            PrintFirstprompt();
         }
+
         private void CheckIfBlocksMatches(object guess1, object guess2)
         {
-            if(difficulty == 1)
+            if (difficulty == 1)
             {
                 if (guess1.ToString() == guess2.ToString())
                 {
@@ -940,9 +965,10 @@ namespace Muistipeli
                 }
                 else
                 {
+                    DisableButtons();
+                    System.Threading.Thread.Sleep(2000);
                     lockedButtons[0].Enabled = true;
                     lockedButtons[1].Enabled = true;
-                    System.Threading.Thread.Sleep(2000);
                     lockedButtons[0].Text = "";
                     lockedButtons[1].Text = "";
                 }
@@ -965,9 +991,10 @@ namespace Muistipeli
                 }
                 else
                 {
+                    DisableButtons();
+                    System.Threading.Thread.Sleep(2000);
                     lockedButtons[0].Enabled = true;
                     lockedButtons[1].Enabled = true;
-                    System.Threading.Thread.Sleep(2000);
                     lockedButtons[0].Text = "";
                     lockedButtons[1].Text = "";
                 }
@@ -990,9 +1017,10 @@ namespace Muistipeli
                 }
                 else
                 {
+                    DisableButtons();
+                    System.Threading.Thread.Sleep(2000);
                     lockedButtons[0].Enabled = true;
                     lockedButtons[1].Enabled = true;
-                    System.Threading.Thread.Sleep(2000);
                     lockedButtons[0].Text = "";
                     lockedButtons[1].Text = "";
                 }
@@ -1000,6 +1028,7 @@ namespace Muistipeli
                 lockedButtons.Clear();
                 textBox2.Text = "Pareja jäljellä " + level3Pairs;
             }
+            CheckIfPlayerHasWon();
         }
     }
 }
