@@ -18,8 +18,6 @@ namespace Muistipeli
         List<int> levelNumbers = new List<int>();
 
         bool isFirstPress = true;
-        //bool isAvailable = true;
-        //bool isShowing = false;
         int movesTaken = 0;
         int level1Pairs = 3;
         int level2Pairs = 10;
@@ -887,7 +885,6 @@ namespace Muistipeli
                         break;
                 }
             }
-            //DisableButtons();
             guess2 = buttonX.Text;
             lockedButtons.Add(buttonX);
             lockedButtons[1].Enabled = false;
@@ -902,19 +899,19 @@ namespace Muistipeli
             if(difficulty == 1)
             {
                 panel1.Enabled = false;
-                await Task.Delay(2100);
+                await Task.Delay(2020);
                 panel1.Enabled = true;
             }
             else if (difficulty == 2)
             {
                 panel2.Enabled = false;
-                await Task.Delay(2500);
+                await Task.Delay(2020);
                 panel2.Enabled = true;
             }
             else if (difficulty == 3)
             {
                 panel3.Enabled = false;
-                await Task.Delay(2500);
+                await Task.Delay(2020);
                 panel3.Enabled = true;
             }
         }
